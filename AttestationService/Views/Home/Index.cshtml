@@ -1,41 +1,35 @@
-﻿@{
+﻿@model List<AttestationService.ViewModels.FacultyViewModel>
+
+@{
     ViewBag.Title = "Home Page";
 }
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+            <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:Slide" alt="First Slide">
             <div class="container">
                 <div class="carousel-caption">
                     <div class="container marketing">
                         <div class="row">
-                            <div class="col-lg-4">
-                                <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
-                                <h2>Getting started</h2>
-                                <p>
-                                    ASP.NET MVC
-                                </p>
-                                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-                            </div>
-                            <div class="col-lg-4">
-                                <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
-                                <h2>Get more libraries</h2>
-                                <p>NuGet</p>
-                                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-                            </div>
-                            <div class="col-lg-4">
-                                <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
-                                <h2>Web Hosting</h2>
-                                <p>You can</p>
-                                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-                            </div>
+                            @for (int j = 0; j < 3; j++)
+                            {
+                                <div class="col-lg-4">
+                                    <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
+                                    <h2>@Model[j].Name</h2>
+                                    <p>
+                                        @Model[j].Description
+                                    </p>
+                                    <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -45,9 +39,21 @@
             <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Another example headline.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                    <div class="container marketing">
+                        <div class="row">
+                            @for (int j = 3; j < 6; j++)
+                            {
+                                <div class="col-lg-4">
+                                    <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
+                                    <h2>@Model[j].Name</h2>
+                                    <p>
+                                        @Model[j].Description
+                                    </p>
+                                    <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                                </div>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,9 +61,65 @@
             <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>One more for good measure.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                    <div class="container marketing">
+                        <div class="row">
+                            @for (int j = 6; j < 9; j++)
+                            {
+                                <div class="col-lg-4">
+                                    <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
+                                    <h2>@Model[j].Name</h2>
+                                    <p>
+                                        @Model[j].Description
+                                    </p>
+                                    <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img data-src="holder.js/900x500/auto/#444:#4a4a4a/text:Fouth slide" alt="Fouth slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <div class="container marketing">
+                        <div class="row">
+                            @for (int j = 9; j < 12; j++)
+                            {
+                                <div class="col-lg-4">
+                                    <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
+                                    <h2>@Model[j].Name</h2>
+                                    <p>
+                                        @Model[j].Description
+                                    </p>
+                                    <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img data-src="holder.js/900x500/auto/#333:#3a3a3a/text:Fifth slide" alt="Fifth slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <div class="container marketing">
+                        <div class="row">
+                            @for (int j = 12; j < 14; j++)
+                            {
+                                <div class="col-lg-6">
+                                    <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
+                                    <h2>@Model[j].Name</h2>
+                                    <p>
+                                        @Model[j].Description
+                                    </p>
+                                    <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                                </div>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,6 +130,7 @@
 <div class="container marketing">
     <div class="row">
         <div class="col-lg-4">
+            <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
             <h2>Getting started</h2>
             <p>
                 ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
@@ -77,11 +140,13 @@
             <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
         </div>
         <div class="col-lg-4">
+            <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
             <h2>Get more libraries</h2>
             <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
             <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
         </div>
         <div class="col-lg-4">
+            <img src="http://dot.gsu.by/theme/image.php?theme=custom_corners&image=gsu&rev=294&component=theme" alt="LogoGSU" />
             <h2>Web Hosting</h2>
             <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
             <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>

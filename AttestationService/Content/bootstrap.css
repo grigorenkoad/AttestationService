@@ -6114,6 +6114,7 @@ body.modal-open,
   text-indent: -999px;
   cursor: pointer;
   border: 1px solid #ffffff;
+  border-radius: 6px;
 }
 
 .carousel-indicators .active {
@@ -6121,6 +6122,7 @@ body.modal-open,
   height: 12px;
   margin: 0;
   background-color: #ffffff;
+  border-radius: 6px;
 }
 
 .carousel-caption {

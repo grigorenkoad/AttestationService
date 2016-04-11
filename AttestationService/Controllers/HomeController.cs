@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AttestationService.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,12 @@ namespace AttestationService.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<FacultyViewModel> facults = new List<FacultyViewModel>();
+            for (int i = 0; i < 14; i++)
+            {
+                facults.Add(new FacultyViewModel("Faculty" + i.ToString(), "Blah-blah-blah"));
+            }
+            return View(facults);
         }
 
         public ActionResult About()

@@ -48,7 +48,9 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
-  background-color: #777;
+  background-color: #5787de;
+  //background-image: url(http://iad.gsu.by/wp-content/uploads/2011/05/maket_2site.jpg);
+  background-size: 100%;
 }
 .carousel-inner > .item > img {
   position: absolute;

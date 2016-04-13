@@ -2,30 +2,32 @@
 @{
     ViewBag.Title = Resources.Resource.Register;
 }
-<hr />
-<div class="container">
-    <div class="form-signin" role="form">
-        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
-        {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true)
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="item active">
+        <div class="carousel-caption">
+            <div class="form-signin" role="form">
+                @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
 
-            <h2 class="form-signin-heading">
-                @ViewBag.Title.
-            </h2>
-            <h4>@Resources.Resource.CreateNewAccount</h4>
-            <hr />
-            @Html.TextBoxFor(m => m.Login, new { @class = "form-control", placeholder = Resources.Resource.UserName })
-            @Html.ValidationMessageFor(m => m.Login)
+                    <h2 class="form-signin-heading">
+                        @ViewBag.Title.
+                    </h2>
+                    <h4>@Resources.Resource.CreateNewAccount</h4>
+                    @Html.TextBoxFor(m => m.Login, new { @class = "form-control", placeholder = Resources.Resource.UserName })
+                    @Html.ValidationMessageFor(m => m.Login)
 
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Resources.Resource.Password })
-            @Html.ValidationMessageFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Resources.Resource.Password })
+                    @Html.ValidationMessageFor(m => m.Password)
 
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Resources.Resource.ConfirmPassword })
-            @Html.ValidationMessageFor(m => m.ConfirmPassword)
-            <hr />  
-            <button class="btn btn-lg btn-primary btn-block" type="submit">@Resources.Resource.Register</button>
-        }
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Resources.Resource.ConfirmPassword })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                    <hr />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">@Resources.Resource.Register</button>
+                }
+            </div>
+        </div>
     </div>
 </div>
 

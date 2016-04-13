@@ -39,7 +39,7 @@ namespace AttestationService.Controllers
         {
             string returnUrl = Request.UrlReferrer.AbsolutePath;
             // Список культур
-            List<string> cultures = new List<string>() { "ru", "en", "de" };
+            List<string> cultures = new List<string>() { "ru", "en"};
             if (!cultures.Contains(lang))
             {
                 lang = "ru";

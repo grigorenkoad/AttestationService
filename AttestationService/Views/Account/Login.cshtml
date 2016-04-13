@@ -3,30 +3,34 @@
 @{
     ViewBag.Title = Resources.Resource.LogIn;
 }
-<hr/>
-<div class="container">
-    <div class="form-signin" role="form">
-        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
-        {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true)
 
-            <h2 class="form-signin-heading">
-                @ViewBag.Title
-            </h2>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="item active">
+        <div class="carousel-caption">
+            <div class="form-signin" role="form">
+                @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
 
-            @Html.TextBoxFor(m => m.Login, new { @class = "form-control", placeholder = @Resources.Resource.UserName })
-            @Html.ValidationMessageFor(m => m.Login)
+                    <h2 class="form-signin-heading">
+                        @ViewBag.Title
+                    </h2>
 
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = @Resources.Resource.Password })
-            @Html.ValidationMessageFor(m => m.Password)
+                    @Html.TextBoxFor(m => m.Login, new { @class = "form-control", placeholder = @Resources.Resource.UserName })
+                    @Html.ValidationMessageFor(m => m.Login)
 
-            <div class="form-inline">
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = @Resources.Resource.Password })
+                    @Html.ValidationMessageFor(m => m.Password)
+
+                    <div class="form-inline">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">@Resources.Resource.LogIn</button>
+                }
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">@Resources.Resource.LogIn</button>
-        }
+        </div>
     </div>
 </div>
 @section Scripts {

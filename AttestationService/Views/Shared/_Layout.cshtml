@@ -23,33 +23,27 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink(Resources.Resource.Students, "About", "Home")</li>
+                            <li>@Html.ActionLink(Resources.Resource.Students, "Index", "Home")</li>
                             <li>@Html.ActionLink(Resources.Resource.Teachers, "Contact", "Home")</li>
+                            <li>@Html.ActionLink(Resources.Resource.Admin, "Contact", "Home")</li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.Resource.PersonalAccount <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Мои курсы", "ChangeCulture", "Home")</li>
+                                    <li>@Html.ActionLink("Мои курсы", "ChangeCulture", "Home")</li>
+                                    <li class="divider"></li>
+                                    <li>@Html.ActionLink("Настроить", "About", "Home")</li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">@Resources.Resource.Language</li>
                                     <li>@Html.ActionLink(Resources.Resource.Russian, "ChangeCulture", "Home", new { lang = "ru" })</li>
                                     <li>@Html.ActionLink(Resources.Resource.English, "ChangeCulture", "Home", new { lang = "en" })</li>
-                                    <li class="divider"></li>
-                                    <li>@Html.ActionLink("Edit my account", "ChangeCulture", "Home", new { lang = "en" })</li>
                                 </ul>
                             </li>
-                            <li>@Html.ActionLink(Resources.Resource.Admin, "Contact", "Home")</li>
                         </ul>
                         @Html.Partial("_LoginPartial")
                         @*<form class="navbar-form navbar-right">
                             <input type="text" class="form-control" placeholder="Search...">
                         </form>*@
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.Resource.Language <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink(Resources.Resource.Russian, "ChangeCulture", "Home", new { lang = "ru" })</li>
-                                    <li>@Html.ActionLink(Resources.Resource.English, "ChangeCulture", "Home", new { lang = "en" })</li>
-                                </ul>
-                            </li>
-                        </ul>
-
                     </div>
                 </div>
             </div>

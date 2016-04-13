@@ -8,8 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using AttestationService.Models;
 using AttestationService.Filters;
+using AttestationService.ViewModels;
+using AttestationService.Models;
 
 namespace AttestationService.Controllers
 {
@@ -68,7 +69,7 @@ namespace AttestationService.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Login(ViewModels.LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -149,7 +150,7 @@ namespace AttestationService.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(ViewModels.RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {

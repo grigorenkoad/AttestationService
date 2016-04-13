@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -11,7 +11,6 @@
 <body>
     <div class="navbar-wrapper">
         <div class="container">
-
             <div class="navbar navbar-inverse navbar-static-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
@@ -20,15 +19,37 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink(Resources.Resource.AppName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink(Resources.Resource.Students, "About", "Home")</li>
+                            <li>@Html.ActionLink(Resources.Resource.Teachers, "Contact", "Home")</li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.Resource.PersonalAccount <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink(Resources.Resource.Russian, "ChangeCulture", "Home", new { lang = "ru" })</li>
+                                    <li>@Html.ActionLink(Resources.Resource.English, "ChangeCulture", "Home", new { lang = "en" })</li>
+                                    <li class="divider"></li>
+                                    <li>@Html.ActionLink("Edit my account", "ChangeCulture", "Home", new { lang = "en" })</li>
+                                </ul>
+                            </li>
+                            <li>@Html.ActionLink(Resources.Resource.Admin, "Contact", "Home")</li>
                         </ul>
                         @Html.Partial("_LoginPartial")
+                        @*<form class="navbar-form navbar-right">
+                            <input type="text" class="form-control" placeholder="Search...">
+                        </form>*@
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Resources.Resource.Language <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink(Resources.Resource.Russian, "ChangeCulture", "Home", new { lang = "ru" })</li>
+                                    <li>@Html.ActionLink(Resources.Resource.English, "ChangeCulture", "Home", new { lang = "en" })</li>
+                                </ul>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AttestationService.Filters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,18 +9,19 @@ namespace AttestationService.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required]
-        [Display(Name = "Логин")]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resource),
+                  ErrorMessageResourceName = "UserNameRequired")]
+        [Display(Name = "UserName", ResourceType = typeof(Resources.Resource))]
         public string Login { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Пароль")]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resource),
+                  ErrorMessageResourceName = "PasswordRequired")]
+        [Display(Name = "Password", ResourceType = typeof(Resources.Resource))]
         public string Password { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Подтверждение пароля")]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resource),
+                  ErrorMessageResourceName = "ConfirmPasswordRequired")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(Resources.Resource))]
         public string ConfirmPassword { get; set; }
     }
 }

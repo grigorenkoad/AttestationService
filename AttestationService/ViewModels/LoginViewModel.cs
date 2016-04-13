@@ -1,20 +1,23 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AttestationService.Filters;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace AttestationService.ViewModels
 {
+    [Culture]
     public class LoginViewModel
     {
-        [Required]
-        [Display(Name = "Имя пользователя")]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resource),
+                  ErrorMessageResourceName = "UserNameRequired")]
+        [Display(Name = "UserName", ResourceType = typeof(Resources.Resource))]
         public string Login { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Пароль")]
+        [Required(ErrorMessageResourceType = typeof(Resources.Resource),
+                  ErrorMessageResourceName = "PasswordRequired")]
+        [Display(Name = "Password", ResourceType = typeof(Resources.Resource))]
         public string Password { get; set; }
 
-        [Display(Name = "Запомнить меня")]
+        [Display(Name = "RememberMe", ResourceType = typeof(Resources.Resource))]
         public bool RememberMe { get; set; }
     }
 }

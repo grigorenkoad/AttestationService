@@ -9,9 +9,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AttestationService.Models;
+using AttestationService.Filters;
 
 namespace AttestationService.Controllers
 {
+    [Culture]
     [Authorize]
     public class AccountController : Controller
     {
